@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
@@ -9,30 +11,12 @@ class Dashboard extends StatelessWidget {
       appBar: AppBar(
           title: Text("dashboard".toUpperCase()),
           backgroundColor: Colors.blueGrey),
-      body: Center(
-        child: Text.rich(
-          TextSpan(
-            text: 'My',
-            children: [
-              TextSpan(
-                text: 'Flutter',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 50.0,
-                  color: Colors.blue[100],
-                ),
-              ),
-              TextSpan(
-                text: 'App',
-                style: TextStyle(
-                  fontSize: 30.0,
-                  color: Colors.amber,
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
+      body: Center(child: Text("Random Value is: ${getNumber()}")),
     );
   }
+}
+
+// Function
+int getNumber() {
+  return Random().nextInt(100);
 }
